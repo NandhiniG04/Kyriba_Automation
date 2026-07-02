@@ -1,164 +1,96 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/triconinfotech/nilgiri/main/files/nilgiri.PNG" alt="Nilgiri Logo" width="200"/>
-</p>
-<h1 align="center">Nilgiri Automation Framework</h1>
+Here is the fully formatted, professional README text based exactly on your workflow and setup steps. You can copy this directly and paste it into your `README.md` file.
 
-<p align="center">
-    <em>Welcome to <strong>Nilgiri</strong>, An innovative hybrid testing framework combining Cucumber's BDD elegance with Playwright's browser automation for streamlined, behavior-driven web application testing..</em>
-</p>
+### **How to Update Your README**
 
-<p align="center">
-    <!-- Playwright specific badges -->
-    <a href="https://github.com/microsoft/playwright">
-        <img src="https://img.shields.io/badge/Playwright-Framework-blue" alt="Playwright Framework">
-    </a>
-    <a href="https://cucumber.io/">
-        <img src="https://img.shields.io/badge/Cucumber-BDD-green.svg" alt="Cucumber BDD">
-    </a>
-    <a href="https://github.com/animeshkumar29/nilgiri/blob/main/LICENSE.txt">
-        <img src="https://img.shields.io/github/license/animeshkumar29/nilgiri" alt="license: MIT">
-    </a>
-</p>
+1. Open `README.md` in VS Code.
+2. Delete everything currently in there.
+3. Paste the text below.
+4. Save the file, then run:
+* `git add README.md`
+* `git commit -m "Updated README with clear user instructions"`
+* `git push`
 
-## Framework Flow
-
-![Nilgiri Framework](https://raw.githubusercontent.com/triconinfotech/nilgiri/main/files/nilgiriFramework.PNG)
-
----
-
-## Folder Structure
-``` bash
-nilgiri/
-├── spec/
-│   ├── apiSpec/
-│   │   ├── api.spec.ts
-|   ├── uiSpec/
-|       ├── ui.spec.ts
-├── endtoend/
-│   ├── features/
-│   │   ├── home.feature
-|   ├── steps/
-|   |   ├── homeStepDef.ts
-|   ├── hook.ts
-│   
-├── common/
-|   ├── apiBase.ts
-│   ├── uiBase.ts
-|   
-├── elementFactory/
-│   ├── pageOne.ts
-│   ├── pageTwo.ts
-|
-├── utils/
-│   ├── uiCommonMethodModule.ts
-│   ├── uiElementFactoryModule.ts
-│   
-├── resource/
-│   ├── apiTestData
-|   |   ├── apiTestData.json
-|   |
-│   ├── uiTestData
-|       ├── uiTestData.json
-|
-├── report/
-|   ├── teams-webhook.js
-|
-├── node_modules/
-├── package.json
-├── package-lock.json
-├── .gitignore
-├── README.md
-├── cucumber.json
-├── generateReport.ts
-├── tsConfig.json
-```
-- `node_modules`: Contains all the npm packages required by the project.
-- `elementFactory`: This directory holds the page element object models,facilitating easy maintenance and readability.
-- `common`: Shared utilities and functions that can be reused across different tests are located here.
-- `resource`: Contains subdirectories for different types of test data and other resources:
-  - `apiTestData`: JSON files or other data formats for API testing.
-  - `uiTestData`: Data files specific to UI testing.
-- `spec`: Test specifications are divided into two categories:
-  - `apiSpec`: Contains specification files for API tests.
-  - `uiSpec`: Contains specification files for UI tests.
-- `endtoend`: Test specifications are divided into two categories:
-  - `features`: Contains feature files for the End to End and business use cases.
-  - `steps`: Contains steps Defination for the Feature Files.
-- `test-results`: Stores the output from test executions, such as reports and logs.
-- `utils`: Helper methods and utility functions to support various testing operations.
-- `.gitignore`: Specifies intentionally untracked files to ignore.
-- `package.json` & `package-lock.json`: Define project metadata and lock down the versions of npm packages.
-- `playwright.config.ts`: Configuration file for Playwright test runner.
-- `README.md`: Documentation for the project.
 
 
 ---
 
-## Installation
+```markdown
+# Kyriba UI Automation (Nilgiri)
 
-Before you begin, ensure you have [Node.js](https://nodejs.org/) installed on your system.
+This repository contains a desktop application (Nilgiri) built to automate UI interactions within the Kyriba application. By automating the data entry and validation process, this tool significantly reduces human effort and minimizes manual errors.
 
-1. Clone the repository:
-   ```bash
-   git clone https://your-repository-url
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd nigiri
-   ```
+## 🚀 How It Works
 
-## Record Your Test
+Once the application is launched, the automation follows this workflow:
+* **Upload:** The user uploads an Excel file containing transaction details into the Nilgiri UI.
+* **Process:** Upon starting the automation, the script iterates through each transaction in the Excel file.
+* **Automate:** It automatically interacts with the Kyriba UI to fill in details, select dropdowns, and click radio buttons and launch the batch process.
+* **Extract:** It downloads the payment folder, extracts the payment XML file, and saves it to a local directory.
+* **Validate:** It opens a secondary Validation UI to verify the extracted XML file.
+* **Report:** Finally, it writes the validation results directly back into the original Excel file.
 
-Record your test with [Playwright CodeGen](https://playwright.dev/docs/codegen)
+---
 
-![Playwright CodeGen Demo](https://raw.githubusercontent.com/triconinfotech/nilgiri/main/files/PlaywrightCodeGen.gif)
+## 🛠️ Prerequisites
 
-## Running Tests
+Before you begin, ensure you have the following installed on your system:
+* [Node.js](https://nodejs.org/) (Required to run npm commands)
 
-Execute the following command to run all tests:
+---
+
+## 💻 Setup & Installation Instructions
+
+Follow these steps to clone the project, install the required packages, and build the application.
+
+**1. Clone the repository**
 ```bash
-npm run automation
+git clone [https://github.com/NandhiniG04/Kyriba_Automation.git](https://github.com/NandhiniG04/Kyriba_Automation.git)
+
 ```
 
-For running specific tests, you can use:
+**2. Navigate to the project directory**
+
 ```bash
-npx playwright test --grep "test name pattern"
+cd Kyriba_Automation
+
 ```
-For running specific tests to GitHub Action from Curl Command:
+
+**3. Install standard node packages**
+This command installs all the core dependencies required by the project.
+
 ```bash
-curl --location 'https://api.github.com/repos/{repoOwnerName}/{RepoName}/actions/workflows/automation.yml/dispatches' \
---header 'Accept: application/vnd.github+json' \
---header 'X-GitHub-Api-Version: 2022-11-28' \
---header 'Content-Type: application/json' \
---header 'Authorization: Bearer <Your Git Hub Personal Token>' \
---data '{
-    "ref": "main",
-    "inputs": {
-        "custom_feature_file": "endtoend/features/home.feature"
-    }
-}'
+npm i
+
 ```
-## Adding New Tests
 
-To add a new UI test:
-1. Create a new `.ts` file in the `spec/uiSpec` directory.
-2. Write your test using the Playwright API and the page objects from `elementFactory`.
+**4. Install Electron Builder**
+This package is specifically required to bundle and package the Electron desktop application.
 
-For API tests, follow a similar process in the `spec/apiSpec` directory.
+```bash
+npm install electron-builder --save-dev
 
-## Contributing
+```
 
-We welcome contributions to the Nilgiri framework. Please read through our contributing guidelines before making a pull request.
+**5. Build the application**
+This command bundles the code and generates the final, runnable application.
 
-## Support
+```bash
+npm run build
 
-If you encounter any issues or have questions, please file an issue on the GitHub repository issue tracker.[Nilgiri GitHub repository](https://github.com/triconinfotech/nilgiri/issues).
+```
 
-## License
+---
 
-Nilgiri is open-source software licensed under the [licensed under the MIT license](https://github.com/triconinfotech/nilgiri/blob/main/LICENSE.txt).
+## ▶️ Running the Application
 
-Thank you for choosing Nilgiri Framework for your automation needs!
-<p align="center">
-    Copyright (c) 2024 Tricon Infotech
-</p>
+Once the build process is complete, follow these steps to use the automation tool:
+
+1. Open your project folder and locate the newly generated **`dist`** folder.
+2. Open the `dist` folder.
+3. Find the executable application file named **`nilgiri`**.
+4. Double-click the file to start the app.
+5. Upload your Excel sheet using the UI and click start to begin the automation!
+
+```
+
+```
