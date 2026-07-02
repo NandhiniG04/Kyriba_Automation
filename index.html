@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyriba Automation</title>
+    <style>
+        /* === BASE STYLES === */
+        :root {
+            --primary: #005A9E;
+            --primary-hover: #004578;
+            --bg-color: #f4f7f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-muted: #6b7280;
+            --border-color: #e5e7eb;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 30px;
+            line-height: 1.5;
+        }
+
+        /* === HEADER === */
+        .app-header {
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
+        .app-header h1 {
+            margin: 0;
+            font-size: 28px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .app-header p {
+            margin: 5px 0 0 0;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        /* === CARDS === */
+        .card {
+            background: var(--card-bg);
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            margin-bottom: 24px;
+            border: 1px solid var(--border-color);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            margin-bottom: 16px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #111827;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* === BUTTONS === */
+        button {
+            padding: 10px 20px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        button:hover:not(:disabled) {
+            background-color: var(--primary-hover);
+        }
+
+        button:active:not(:disabled) {
+            transform: translateY(1px);
+        }
+
+        button:disabled {
+            background-color: #d1d5db;
+            color: #9ca3af;
+            cursor: not-allowed;
+        }
+
+        /* === FILE DISPLAY === */
+        .file-display-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        #filePathDisplay {
+            color: var(--text-muted);
+            font-size: 14px;
+            background: #f3f4f6;
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px dashed #d1d5db;
+            flex-grow: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* === TABLE === */
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 14px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #f9fafb;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.05em;
+        }
+
+        tbody tr:hover {
+            background-color: #f9fafb;
+        }
+
+        /* === STATUS BADGES === */
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .status-processing {
+            background-color: #fef3c7;
+            color: #92400e;
+            border: 1px solid #fde68a;
+        }
+
+        .status-success {
+            background-color: #d1fae5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
+        }
+
+        .status-error {
+            background-color: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fecaca;
+        }
+
+        .ref-text {
+            font-family: monospace;
+            color: var(--primary);
+            background: #f3f4f6;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="app-header">
+        <h1>Kyriba Automation</h1>
+        <p>Automated Transaction Processing & HSBC Validation Runner</p>
+    </div>
+
+    <div class="card">
+        <h3>1. Select Input File</h3>
+        <div class="file-display-area">
+            <button id="selectFileBtn">Browse for Excel File</button>
+            <div id="filePathDisplay">No file selected. Please browse for an .xlsx file.</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>2. Run Process</h3>
+        <button id="runBtn" disabled>Start Automation</button>
+    </div>
+
+    <div class="card" style="margin-bottom: 0;">
+        <h3>Live Results</h3>
+        <div class="table-container">
+            <table id="resultsTable">
+                <thead>
+                    <tr>
+                        <th style="width: 40%;">Row # - Transaction</th>
+                        <th style="width: 20%;">Status</th>
+                        <th style="width: 40%;">Reference Details</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        let selectedPath = null;
+
+        // 1. Handle File Selection
+        document.getElementById('selectFileBtn').addEventListener('click', async () => {
+            selectedPath = await window.electronAPI.selectFile();
+            if (selectedPath) {
+                document.getElementById('filePathDisplay').innerText = selectedPath;
+                // Add a visual cue that the file is loaded
+                document.getElementById('filePathDisplay').style.border = "1px solid #a7f3d0";
+                document.getElementById('filePathDisplay').style.backgroundColor = "#ecfdf5";
+                document.getElementById('filePathDisplay').style.color = "#065f46";
+                document.getElementById('runBtn').disabled = false;
+            }
+        });
+
+        // 2. Handle Run Button Click
+        document.getElementById('runBtn').addEventListener('click', () => {
+            const runBtn = document.getElementById('runBtn');
+            runBtn.disabled = true;
+            runBtn.innerText = "Automation Running...";
+            runBtn.style.backgroundColor = "#004578"; // Darker while running
+
+            // Clear previous results
+            document.getElementById('tableBody').innerHTML = "";
+
+            // Send trigger to main.js
+            window.electronAPI.runAutomation(selectedPath);
+        });
+
+        // 3. Handle Live Table Updates from Playwright
+        window.electronAPI.onTableRowUpdate((event, data) => {
+            const tbody = document.getElementById('tableBody');
+
+            // Use the row index for a unique ID
+            const safeId = 'row-' + data.index;
+
+            let row = document.getElementById(safeId);
+
+            // Create the row if it doesn't exist
+            if (!row) {
+                row = document.createElement('tr');
+                row.id = safeId;
+                row.innerHTML = `
+                    <td style="font-weight: 500;">Row ${Number(data.index) + 1} - ${data.name}</td>
+                    <td class="status-cell"></td>
+                    <td class="ref-cell"></td>
+                `;
+                tbody.appendChild(row);
+            }
+
+            const statusCell = row.querySelector('.status-cell');
+            const refCell = row.querySelector('.ref-cell');
+
+            // Apply professional badge styling based on status
+            if (data.status === 'PROCESSING') {
+                statusCell.innerHTML = `<span class="badge status-processing">Processing...</span>`;
+                refCell.innerText = "Awaiting reference...";
+                refCell.style.color = "#6b7280"; // muted text
+            }
+            else if (data.status === 'SUCCESS') {
+                statusCell.innerHTML = `<span class="badge status-success">Completed</span>`;
+                refCell.innerHTML = `<span class="ref-text">${data.details}</span>`;
+            }
+            else if (data.status === 'ERROR') {
+                statusCell.innerHTML = `<span class="badge status-error">Failed</span>`;
+                refCell.innerText = data.details;
+                refCell.style.color = "#991b1b"; // error text
+            }
+        });
+
+        // 4. Handle Completion
+        window.electronAPI.onComplete(() => {
+            const runBtn = document.getElementById('runBtn');
+            runBtn.disabled = false;
+            runBtn.innerText = "Start Automation";
+            runBtn.style.backgroundColor = "";
+
+            // Optional: Give a visual success cue for the whole job
+            alert("Automation Run Complete!\n\nPlease check the UI table and your Excel file for final statuses.");
+        });
+    </script>
+</body>
+
+</html>

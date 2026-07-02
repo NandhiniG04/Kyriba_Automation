@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "types": ["node"],
+    "module": "CommonJS",
+    "strict": false,
+    "esModuleInterop": true,
+    "moduleResolution": "bundler",
+    "lib": ["es6", "dom"],
+    "resolveJsonModule": true,
+    "ignoreDeprecations": "6.0"
+  },
+  "include": [
+    "common/**/*",
+    "spec/**/*",
+    "*.ts"
+, "main.js"  ]
+}

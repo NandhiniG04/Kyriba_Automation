@@ -1,0 +1,32 @@
+export interface TransactionRecord {
+    'Transaction code'?: string | number;
+    'Transfer'?: string;
+    'Debit account'?: string | number;
+    'Name'?: string;
+    'Identifier type'?: string;
+    'Identifier value'?: string | number;
+    'Street 1'?: string;
+    'Street 2'?: string;
+    'City'?: string;
+    'ZIP code'?: string | number;
+    'State'?: string;
+    'Country code'?: string;
+    'Bank name'?: string;
+    'BIC code'?: string;
+    'Bank Identifier Type'?: string;
+    'Bank Identifier Value'?: string | number;
+    'Bank Street 1'?: string;
+    'Bank Street 2'?: string;
+    'Bank City'?: string;
+    'Bank ZIP code'?: string | number;
+    'Bank State'?: string;
+    'Bank Country code'?: string;
+    'Currency'?: string;
+    'BAN type'?: string;
+    'Account'?: string | number;
+    'Economic reason'?: string;
+    'Amount Currency'?: string;
+    'Amount'?: number | string;
+    'Pay from country'?: string;
+    [key: string]: any;
+}

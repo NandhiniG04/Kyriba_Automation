@@ -1,0 +1,139 @@
+{
+  "cookies": [
+    {
+      "name": "KYRIBACOOKIE",
+      "value": "8a85743b024de004bc4166171e116622|a1dd2a1401e056285957daec083d2fe6",
+      "domain": "quartz-sandbox.treasury-factory.com",
+      "path": "/",
+      "expires": 1783145205.557339,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "JSESSIONID",
+      "value": "eJoRaKrCf8E-VTciMs7qt2lCunNA_YGzahGFxkbk.front3",
+      "domain": "quartz-sandbox.treasury-factory.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "utag_main",
+      "value": "v_id:019f217004880046bf05602b1a8405073004506b007f0$_sn:1$_se:1$_ss:1$_st:1782974217162$ses_id:1782972417162%3Bexp-session$_pn:1%3Bexp-session$_prevpage:portal%20%3A%20login%20%3A%20login%20%3A%20login%3Bexp-session$v_rc:TN$v_cc:IN$v_c:CHENNAI",
+      "domain": ".hsbc.com",
+      "path": "/",
+      "expires": 1814508417,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "cookie-agreed-categories",
+      "value": "[%22acceptallcookie%22]",
+      "domain": ".develop.hsbc.com",
+      "path": "/",
+      "expires": 1783836417,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "sessionId",
+      "value": "3d938d60-3292-49b0-bfa4-c3d41816b048",
+      "domain": "develop.hsbc.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "visitorId",
+      "value": "417d2d10-8b03-465c-924b-9a2a2fa34dd7",
+      "domain": "develop.hsbc.com",
+      "path": "/",
+      "expires": 1814508418,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ADRUM",
+      "value": "s=1782972424259&r=https%3A%2F%2Fdevelop.hsbc.com%2Fuser%2Flogin%3F225448630",
+      "domain": ".hsbc.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "Drupal.visitor.autologout_login",
+      "value": "1782972362",
+      "domain": "develop.hsbc.com",
+      "path": "/",
+      "expires": 1814508425.738139,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "SSESS1d0ae40d94a585f39079efc4957aeec5",
+      "value": "RIPBQLpVbaIAJUxrz-39QmiZq66blzzoxF0wTUIs92gupGke",
+      "domain": ".develop.hsbc.com",
+      "path": "/",
+      "expires": 1784972425.738245,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://develop.hsbc.com",
+      "localStorage": [
+        {
+          "name": "hash",
+          "value": ""
+        },
+        {
+          "name": "ADRUM_CLIENTINFO",
+          "value": "{\"seqId\":10,\"clientId\":\"XD_f75a98ca_4d37_b652_e87e_6db4e6d1588a\",\"agentId\":\"XD_f75a98ca_4d37_b652_e87e_6db4e6d1588a\"}"
+        },
+        {
+          "name": "ADRUM_XD_AGENT_INFO",
+          "value": "{\"ver\":\"4.5.16.2845\",\"id\":\"XD_f75a98ca_4d37_b652_e87e_6db4e6d1588a\",\"ttl\":1783577217877}"
+        },
+        {
+          "name": "oldhash",
+          "value": ""
+        },
+        {
+          "name": "prevUrl",
+          "value": "https://develop.hsbc.com/user/login?destination=/tools/file-validator"
+        }
+      ]
+    },
+    {
+      "origin": "https://quartz-sandbox.treasury-factory.com",
+      "localStorage": [
+        {
+          "name": "csrf",
+          "value": "{\"token\":\"Q0MG-63XG-1UVN-H9V0\",\"tokenName\":\"DVM1341A1PRZV1D2\",\"loginPageToken\":\"1782972349638\"}"
+        }
+      ]
+    },
+    {
+      "origin": "https://cdn.appdynamics.com",
+      "localStorage": [
+        {
+          "name": "ADRUM_XD_AGENT_ID",
+          "value": "XD_f75a98ca_4d37_b652_e87e_6db4e6d1588a"
+        }
+      ]
+    }
+  ]
+}
