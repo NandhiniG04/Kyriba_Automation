@@ -1,9 +1,9 @@
 ```markdown
-# Kyriba UI Automation
+#Kyriba UI Automation
 
 This repository contains a desktop application built to automate UI interactions within the Kyriba application. By automating the data entry and validation process, this tool significantly reduces human effort and minimizes manual errors.
 
-## 🚀 How It Works
+##🚀 How It Works
 
 Once the application is launched, the automation follows this workflow:
 * **Upload:** The user uploads an Excel file containing transaction details into the Nilgiri UI.
@@ -15,14 +15,14 @@ Once the application is launched, the automation follows this workflow:
 
 ---
 
-## 🛠️ Prerequisites
+##🛠️ Prerequisites
 
 Before you begin, ensure you have the following installed on your system:
 * [Node.js](https://nodejs.org/) (Required to run npm commands)
 
 ---
 
-## 💻 Setup & Installation Instructions
+##💻 Setup & Installation Instructions
 
 Follow these steps to clone the project, install the required packages, and build the application.
 
@@ -65,7 +65,7 @@ npm run build
 
 ---
 
-## ▶️ Running the Application
+##▶️ Running the Application
 
 Once the build process is complete, follow these steps to use the automation tool:
 
