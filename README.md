@@ -1,23 +1,7 @@
-Here is the fully formatted, professional README text based exactly on your workflow and setup steps. You can copy this directly and paste it into your `README.md` file.
-
-### **How to Update Your README**
-
-1. Open `README.md` in VS Code.
-2. Delete everything currently in there.
-3. Paste the text below.
-4. Save the file, then run:
-* `git add README.md`
-* `git commit -m "Updated README with clear user instructions"`
-* `git push`
-
-
-
----
-
 ```markdown
-# Kyriba UI Automation (Nilgiri)
+# Kyriba UI Automation
 
-This repository contains a desktop application (Nilgiri) built to automate UI interactions within the Kyriba application. By automating the data entry and validation process, this tool significantly reduces human effort and minimizes manual errors.
+This repository contains a desktop application built to automate UI interactions within the Kyriba application. By automating the data entry and validation process, this tool significantly reduces human effort and minimizes manual errors.
 
 ## 🚀 How It Works
 
